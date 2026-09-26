@@ -5,7 +5,7 @@ const topMovies = []
 
 for(let i = 1; i <= 20; i++) {
     movies.push({
-        nome : "Filme" + i,
+        nome : "Filme " + i,
         imagem : "http://www.picsum.photos/200/300?random=" + i
     });
 
@@ -13,7 +13,7 @@ for(let i = 1; i <= 20; i++) {
 
 for(let i = 1; i <= 10; i++) {
     topMovies.push({
-        nome : "Filme" + i,
+        nome : "Filme " + i,
         imagem : "http://www.picsum.photos/200/300?random=" + (i +99)
     });
 
@@ -77,4 +77,21 @@ function mudaBanner(){
 mudaBanner();
 
 // Chame esse método a cada 3 segundos
-setInterval(mudaBanner, 300);
+setInterval(mudaBanner, 3000);
+
+function mudaTema() {
+    document.body.classList.toggle("light");
+
+   const icone = document.querySelector("#botao i");
+
+   // Validar se ta com tema claro ou escuro
+
+   if(document.body.classList.contains("light")){
+        icone.classList.remove('fa-sun');
+        icone.classList.add('fa-moon');
+   } else {
+        icone.classList.remove('fa-moon');
+        icone.classList.add('fa-sun');
+   }
+
+}
